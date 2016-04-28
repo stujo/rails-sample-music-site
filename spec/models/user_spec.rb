@@ -4,18 +4,18 @@ RSpec.describe User, type: :model do
 
   # From https://quickleft.com/blog/rails-tip-validating-users-with-has_secure_password/
   describe "Validations" do
-  let(:user_required_fields) do
-    { name: "Mary" }
-  end
+    let(:user_required_fields) do
+      { name: "Mary" }
+    end
 
     context "on a new user" do
 
       let(:user){
-      	User.new(user_required_fields)
+        User.new(user_required_fields)
       }
 
       let(:bob){
-      	User.create(name: "Bob", password: "Pa55w0rD", password_confirmation: "Pa55w0rD")
+        User.create(name: "Bob", password: "Pa55w0rD", password_confirmation: "Pa55w0rD")
       }
 
       it "should be valid with password and confirmation" do
@@ -44,7 +44,7 @@ RSpec.describe User, type: :model do
       end
 
       it "must have a unique name" do
-      	user.assign_attributes(password: "Pa55w0rd", password_confirmation: "Pa55w0rd")
+        user.assign_attributes(password: "Pa55w0rd", password_confirmation: "Pa55w0rd")
         user.assign_attributes(name: bob.name)
         user.should_not be_valid
       end
