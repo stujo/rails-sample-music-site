@@ -2,20 +2,20 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
+  let(:bob){
+      User.create(name: "Bob", password: "Pa55w0rD", password_confirmation: "Pa55w0rD")
+  }
+
   # From https://quickleft.com/blog/rails-tip-validating-users-with-has_secure_password/
   describe "Validations" do
     let(:user_required_fields) do
       { name: "Mary" }
-    end
+    end 
 
     context "on a new user" do
 
       let(:user){
         User.new(user_required_fields)
-      }
-
-      let(:bob){
-        User.create(name: "Bob", password: "Pa55w0rD", password_confirmation: "Pa55w0rD")
       }
 
       it "should be valid with password and confirmation" do
@@ -71,6 +71,12 @@ RSpec.describe User, type: :model do
         expect(user).to_not be_valid
       end
     end
+  end
+
+  describe "#name" do
+     it "should always be lowercased" do
+        expect(bob.name).to eq(bob.name.downcase)
+     end
   end
 
 end
