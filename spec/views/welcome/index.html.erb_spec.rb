@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe "welcome/index.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+ it "Says Welcome" do
+ 	# For more interesting templates
+    # assign(:widgets, [
+    #   stub_model(Widget, :name => "slicer"),
+    #   stub_model(Widget, :name => "dicer")
+    # ])
+
+    render
+
+    expect(rendered).to match /Welcome/
+  end
 end
