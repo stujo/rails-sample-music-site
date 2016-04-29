@@ -1,0 +1,32 @@
+<h1>Join Us!</h1>
+
+<%= form_for(@user) do |f| %>
+  <div class="row">
+    <div class="six columns">
+      <%= f.label :name %>
+      <% if @user.errors[:name].any? %>
+        <span class="field_error">Name <%= @user.errors[:name].first %></span>
+      <% end %>
+      <%= f.text_field :name, :required => "required", :placeholder => "Username" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="six columns">
+      <%= f.label :password %>
+      <% if @user.errors[:password].any? %>
+        <span class="field_error">Password <%= @user.errors[:password].first %></span>
+      <% end %>
+      <%= f.password_field :password, :required => "required", :placeholder => "password" %>
+    </div>
+    <div class="six columns">
+      <%= f.label :password_confirmation %>
+      <% if @user.errors[:password_confirmation].any? %>
+        <span class="field_error">Confirmation <%= @user.errors[:password_confirmation].first %></span>
+      <% end %>
+      <%= f.password_field :password_confirmation, :required => "required", :placeholder => "password" %>
+    </div>
+  </div>
+  <input class="button-primary" type="submit" value="Register">
+<% end %>
+
+
