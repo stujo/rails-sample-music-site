@@ -10,6 +10,11 @@ feature 'User logs in' do
 
     click_button 'Login'
 
-    expect(page.body).to match /Welcome/
+    expect(page.body).to match Regexp.new(existing_user.name)
+    expect(current_path).to eq "/"
+
+    # Check is persistent
+    visit root_path
+    expect(page.body).to match Regexp.new(existing_user.name)
   end
 end

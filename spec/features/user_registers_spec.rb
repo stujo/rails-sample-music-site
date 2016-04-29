@@ -1,4 +1,9 @@
 feature 'User registers' do
+
+  let(:page_check){ 
+  	/mary/ 
+  }
+
   scenario 'they are redirected to the welcome page' do
     visit signup_path
 
@@ -8,6 +13,11 @@ feature 'User registers' do
 
     click_button 'Register'
 
-    expect(page.body).to match /Welcome/
+    expect(page.body).to match page_check
+    expect(current_path).to eq "/"
+
+    # Check is persistent
+    visit root_path
+    expect(page.body).to match page_check
   end
 end
