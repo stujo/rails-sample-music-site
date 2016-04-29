@@ -29,6 +29,16 @@
 </head>
 <body>
 
+<header>
+  <div class="container">
+     <% if authenticated? %>
+       YO <%= current_user.name %>  <%= link_to "Logout", logout_path  %>
+     <% else %>
+       NO! <%= link_to "Login", login_path  %> <%= link_to "Sign Up", signup_path  %>
+     <% end %>
+  </div>
+</header>
+
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
