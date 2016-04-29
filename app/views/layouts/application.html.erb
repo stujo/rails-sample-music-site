@@ -32,9 +32,13 @@
 <header>
   <div class="container">
      <% if authenticated? %>
-       YO <%= current_user.name %>  <%= link_to "Logout", logout_path  %>
+       Welcome <%= current_user.name %>  
+       <%= link_to logout_path  do %>
+         <button class="button-primary" >Log Out</button>
+       <% end %>
      <% else %>
-       NO! <%= link_to "Login", login_path  %> <%= link_to "Sign Up", signup_path  %>
+       <%= link_to login_path  do %><button class="button-primary" >Log In</button><% end %>
+       <%= link_to signup_path  do %><button class="button-primary" >Sign Up</button><% end %>
      <% end %>
   </div>
 </header>
