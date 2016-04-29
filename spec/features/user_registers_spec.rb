@@ -1,5 +1,5 @@
 feature 'User registers' do
-  scenario 'they see the foobar on the page' do
+  scenario 'they are redirected to the welcome page' do
     visit signup_path
 
     fill_in 'user[name]', with: 'Mary'

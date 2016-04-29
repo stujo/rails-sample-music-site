@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  get 'sessions/new'
+
+  get    'login'  => 'sessions#new'
+  resources :sessions, only: [:new, :create, :destroy]
+
   get 'users/new'
 
   get    'signup'  => 'users#new'

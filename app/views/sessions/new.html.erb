@@ -1,0 +1,23 @@
+<h1>Login</h1>
+
+<%= form_for(@session) do |f| %>
+  <div class="row">
+    <div class="six columns">
+      <%= f.label :name %>
+      <% if @session.errors[:name].any? %>
+        <span class="field_error">Name <%= @session.errors[:name].first %></span>
+      <% end %>
+      <%= f.text_field :name, :required => "required", :placeholder => "username" %>
+    </div>
+    <div class="six columns">
+      <%= f.label :password %>
+      <% if @session.errors[:password].any? %>
+        <span class="field_error">Password <%= @session.errors[:password].first %></span>
+      <% end %>
+      <%= f.password_field :password, :required => "required", :placeholder => "password" %>
+    </div>
+  </div>
+  <input class="button-primary" type="submit" value="Login">
+<% end %>
+
+
