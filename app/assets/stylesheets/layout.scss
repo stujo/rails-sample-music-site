@@ -1,0 +1,15 @@
+
+header {
+	height: 40px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	border-bottom: 1px solid #333;
+	background-color: #eee;
+	z-index:100000;
+}
+
+#content {
+  margin-top: 50px;
+  height: auto;
+}
