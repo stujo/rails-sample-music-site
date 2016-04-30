@@ -11,7 +11,7 @@ feature 'User logs in' do
     click_button 'Login'
 
     expect(page.body).to match Regexp.new(existing_user.name)
-    expect(current_path).to eq "/"
+    expect(current_path).to eq "/dashboard"
 
     # Check is persistent
     visit root_path

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       # Assign to Session
       sign_in(@session.user)
       # Redirect
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render 'new'
     end

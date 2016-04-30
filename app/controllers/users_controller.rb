@@ -9,10 +9,14 @@ class UsersController < ApplicationController
     	# Assign to Session
     	sign_in(@user)
     	# Redirect
-    	redirect_to root_path
+    	redirect_to dashboard_path
     else
       render 'new'
     end
+  end
+
+  def dashboard
+    @user = current_user
   end
 
   private

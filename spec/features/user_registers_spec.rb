@@ -14,7 +14,7 @@ feature 'User registers' do
     click_button 'Register'
 
     expect(page.body).to match page_check
-    expect(current_path).to eq "/"
+    expect(current_path).to eq "/dashboard"
 
     # Check is persistent
     visit root_path
