@@ -9,7 +9,7 @@ feature 'User logs out' do
 
     click_button 'Register'
 
-    click_link 'Logout'
+    click_link 'Log Out'
 
     expect(current_path).to eq "/"
     expect(page.body).to include "Sign Up"
