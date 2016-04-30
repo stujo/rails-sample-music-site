@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   get    'signup'  => 'users#new'
-  resources :users, only: [:new, :create]
+  resource :user, only: [:new, :create]
+
+  get 'dashboard' => 'users#dashboard'
+
+
 
   # get    'login'   => 'sessions#new'
   # post   'login'   => 'sessions#create'
