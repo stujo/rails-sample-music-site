@@ -33,11 +33,9 @@
   <div class="container">
      <% if authenticated? %>
        Welcome <%= current_user.name %>  
-       <%= link_to logout_path  do %>
-         <button class="button-primary" >Log Out</button>
-       <% end %>
+       (<%= link_to "Log Out", logout_path %>)
      <% else %>
-       <%= link_to login_path  do %><button class="button-primary" >Log In</button><% end %>
+       <%= link_to login_path  do %><button >Log In</button><% end %>
        <%= link_to signup_path  do %><button class="button-primary" >Sign Up</button><% end %>
      <% end %>
   </div>

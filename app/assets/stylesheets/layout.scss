@@ -1,6 +1,6 @@
 
 header {
-	height: 40px;
+	height: 39px;
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -8,9 +8,14 @@ header {
 	background-color: #eee;
 	z-index:100000;
 	opacity:0.9;
+	padding: 2px 0 1px 0;
+
+	button {
+	  margin-bottom: 0;
+	}
 }
 
 #content {
-  margin-top: 50px;
+  margin-top: 56px;
   height: auto;
 }
