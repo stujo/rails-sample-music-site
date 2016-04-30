@@ -9,7 +9,6 @@ RESULT=$?
 
 # git stash pop -q
 
-[ RESULT -ne 1 ] && exit 1
+[ $RESULT -ne 1 ] && exit 1
 
-echo "RSpec Passed"
 exit 0
