@@ -32,11 +32,14 @@
 <header>
   <div class="container">
      <% if authenticated? %>
-       Welcome <%= current_user.name %>  
-       (<%= link_to "Log Out", logout_path %>)
+       <div class="message">
+         Welcome <%= current_user.name %>! (<%= link_to "Log Out", logout_path %>)
+       </div>
      <% else %>
-       <%= link_to login_path  do %><button >Log In</button><% end %>
-       <%= link_to signup_path  do %><button class="button-primary" >Sign Up</button><% end %>
+       <div class="actions">
+         <%= link_to login_path  do %><button >Log In</button><% end %>
+         <%= link_to signup_path  do %><button class="button-primary" >Sign Up</button><% end %>
+       </div>
      <% end %>
   </div>
 </header>
