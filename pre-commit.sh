@@ -1,3 +1,4 @@
+#!/bin/sh
 
 # git stash -q --keep-index
 echo "Running RSpec"
