@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
 
-    unless user.nil?
+    if user
         can :access
     end    
 

@@ -13,5 +13,6 @@
  *= require normalize
  *= require skeleton
  *= require forms
+ *= require flash
  *= require layout
  */
