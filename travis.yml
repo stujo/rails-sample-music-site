@@ -1,0 +1,6 @@
+sudo: false
+script: "bin/rspec"
+language: ruby
+cache: bundler
+rvm:
+  - 2.1.0
